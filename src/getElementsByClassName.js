@@ -8,20 +8,20 @@ var getElementsByClassName = function(className) {
   // your code here
   var res = [];
   
-  function searchClassName(element) {
+  var searchClassName = function(element) {
 
-  if(element.classList && element.classList.contains(className)) {
+    if (element.classList && element.classList.contains(className)) {
       res.push(element);
     }
 
   
-  if(element.childNodes) {
-    _.each(element.childNodes, function(node){
-      searchClassName(node);
-    });
-  }
+    if (element.childNodes) {
+      _.each(element.childNodes, function(node) {
+        searchClassName(node);
+      });
+    }
 
-  }
+  };
   
   searchClassName(document.body);
   return res;
