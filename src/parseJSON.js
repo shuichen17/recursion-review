@@ -20,8 +20,18 @@ var parseJSON = function(json) {
       }
       return arr;
     }
+    if (trimJson[0] === '{' && trimJson[trimJson.length - 1] === '}') {
+      var arr = trimJson.slice(1, trimJson.length - 2).split(',');
+      var obj = {};
+      for (var i = 0; i < arr.length; i++) {
+        parseJSON(arr[i]); 
+        //split key and values
+        
+      }
+    
+    }
+    
   }
-  
 
   //
 };
