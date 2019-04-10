@@ -21,15 +21,32 @@ var parseJSON = function(json) {
       return arr;
     }
     if (trimJson[0] === '{' && trimJson[trimJson.length - 1] === '}') {
+          for(var i = 0; i < trimJson.length; i++){
+             if(trimJson[i] === ':'){
+              var currentString = trimJson.slice(0, i);
+               if(currentString.match(/"*"/g)){
+
+}
+              trimJson = trimJson - currentString;
+
+          }
+        }
+       
+
+
+
+
+
+
       var arr = trimJson.slice(1, trimJson.length - 2).split(',');
       var obj = {};
       for (var i = 0; i < arr.length; i++) {
         parseJSON(arr[i]); 
         //split key and values
-        
       }
-    
+       
     }
+  
     
   }
 
